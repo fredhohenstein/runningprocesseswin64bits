@@ -10,7 +10,7 @@ with open("d:\\runpyprograms\\helloworld\\version", "r") as f:
 
 c = wmi.WMI ()
 for process in c.Win32_Process ():
-  print process.ProcessId, process.Name
+  print (process.ProcessId, process.Name)
 
 print("Sleeping for 2 seconds")
 time.sleep(5)
