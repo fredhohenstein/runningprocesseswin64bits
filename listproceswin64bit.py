@@ -12,5 +12,11 @@ c = wmi.WMI ()
 for process in c.Win32_Process ():
   print (process.ProcessId, process.Name)
 
+
+c = wmi.WMI()
+for s in c.Win32_Service(StartMode="Auto", State="Stopped"):
+    if raw_input("Restart %s? " % s.Caption).upper() == "Y":
+        s.StartService()
+
 print("Sleeping for 2 seconds")
 time.sleep(5)
